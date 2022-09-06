@@ -59,31 +59,3 @@
 	</header><!-- #masthead -->
 
 
-
-	<?php if ( get_header_image() ) : ?>
-            <div id="site-header">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <img src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-                </a>
-            </div>
-        <?php endif; ?>
-
-	<?php 
-	$image = get_field( 'header_image');
-	$size = 'full'; // (thumbnail, medium, large, full or custom size)
-	?>
-
-
-	<header class="page-banner" style="background-image: url(<?php if ( get_header_image() ) : header_image(); else : echo esc_url($image['url']); endif; ?>);">
-	<div class="header-overlay"></div>
-	<div class="header-content-wrapper">
-        <div class="container">
-            <div class="row justify-content-center justify-content-lg-end">
-                <div id="header-text-col" class="col col-lg-5 col-xl-6">
-                   test
-                   
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
