@@ -12,7 +12,10 @@
  * Enqueue scripts and styles.
  */
 function hackathon_scripts() {
-	wp_enqueue_style( 'hackathon-style', get_stylesheet_uri(), array(), _S_VERSION );
+	//wp_enqueue_style( 'hackathon-style', get_stylesheet_uri(), array(), _S_VERSION );
+	//wp_style_add_data( 'hackathon-style', 'rtl', 'replace' );
+
+    wp_enqueue_style( 'hackathon-style', get_template_directory_uri() . '/style.min.css', array(), _S_VERSION );
 	wp_style_add_data( 'hackathon-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'hackathon-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -22,8 +25,6 @@ function hackathon_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'hackathon_scripts' );
-
-
 
 /**
  * Load bootstrap from CDN
@@ -73,3 +74,5 @@ function add_popper_script_attributes( $html, $handle ) {
 add_filter('script_loader_tag', 'add_popper_script_attributes', 10, 2);
 
 add_action( 'wp_enqueue_scripts', 'enqueue_load_bootstrap' );
+
+

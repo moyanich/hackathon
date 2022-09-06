@@ -23,6 +23,11 @@ require get_template_directory() . '/inc/setup.php';
 require get_template_directory() . '/inc/enqueue.php';
 
 /**
+ * Implement the Custom Function.
+ */
+require get_template_directory() . '/inc/custom-functions.php';
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
