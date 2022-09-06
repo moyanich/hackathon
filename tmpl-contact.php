@@ -12,8 +12,10 @@ get_header(); ?>
         <div class="container">
 
         <h1>Hello, world!</h1>
-
         
+     
+
+
         <?php
 		while ( have_posts() ) :
 			the_post();
