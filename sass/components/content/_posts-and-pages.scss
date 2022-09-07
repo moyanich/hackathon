@@ -66,6 +66,37 @@
 		font-weight: 100;
 	}
 
+	ul.social-media-links {
+		position: absolute;
+		bottom: 5.5px;
+    	right: 0;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		gap: 5px;
+
+		li {
+			
+
+			a {
+				padding: 0.5em;
+				background: #F77F00;
+				height: 30px;
+				width: 40px;
+				color: $white;
+				text-align: center;
+				transition: .6s ease-in-out;
+
+				&:hover {
+					padding: 0.6em;
+					background: #FCBF49;
+					color: #F77F00;;
+
+				}
+			}
+		}
+	}
 
 
 }

@@ -6,3 +6,18 @@ h5,
 h6 {
 	clear: both;
 }
+
+
+.heading {
+	color: $blue;
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -1.92px;
+}
+
+.sub-heading {
+	color: $yellow;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.06em;
+}

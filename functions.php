@@ -59,3 +59,33 @@ require get_template_directory() . '/inc/custom-functions.php';
  */
 require get_template_directory() . '/inc/custom-post-type.php';
 
+
+/**
+ * function to output page builder blocks or only return list of blocks
+ */
+function acf_display_pb_blocks(){
+	$blocks = array(
+	  'two_column_layout',
+	  'team_layout',
+	  'client_logos',
+	  'spacer',
+	  'btns',
+	  'cards',
+	  'safety',
+	  'testimonial-slider',
+	  'projects',
+	  'cta',
+	  'blog_posts',
+	  'protecth',
+	);
+  
+	if( have_rows('blocks') ):
+	  while ( have_rows('blocks') ) : the_row();
+		$layout = get_row_layout();
+  
+		if( in_array( get_row_layout(), $blocks ) ){
+		  get_template_part( 'components/block', $layout );
+		}
+	  endwhile;
+	endif;
+  }

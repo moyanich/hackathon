@@ -16,9 +16,12 @@ $pageBackground = get_field( 'page_background');
 		<section style="background-image: url(<?php echo $pageBackground; ?>)">
 			<div class="container py-5">
 
-				
+			<?php
+  acf_display_pb_blocks();
+  ?>
+
 					
-			<?php if( have_rows('flexible_layouts') ): ?>
+			<?php /* if( have_rows('flexible_layouts') ): ?>
 				<?php while( have_rows('flexible_layouts') ): the_row(); ?>
 					<?php if( get_row_layout() == 'two_column_layout' ): ?>
 
@@ -59,7 +62,7 @@ $pageBackground = get_field( 'page_background');
 
 					<?php	
 					endwhile; // End of the loop.
-				endif; ?>
+				endif;  */?>
 
 
 
