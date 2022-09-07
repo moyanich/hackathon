@@ -1,6 +1,14 @@
+<?php
+/**
+ * Team Layout
+ * 
+ * 
+ * @package hackathon
+ */
+?>
 
-<section class="team">
-    <div class="container-md">
+<section class="team my-5">
+    <div class="container">
         <div class="row mb-5">
             <div class="col-12 text-center text-capitalize">
                 <h5 class="sub-heading"><?php the_sub_field('sub_heading'); ?></h5> 
