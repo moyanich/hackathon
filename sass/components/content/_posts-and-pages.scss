@@ -44,7 +44,7 @@
 	
 	.card-img-top {
 		border-radius: 0;
-		transition: .3s ease-in-out;
+		transition: .8s cubic-bezier(0, 0, 0, 1.11);
 
 		&:hover {
 			filter: grayscale(100%);
