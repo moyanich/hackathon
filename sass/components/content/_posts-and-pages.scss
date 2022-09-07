@@ -22,11 +22,17 @@
 	margin: 0 0 1.5em;
 }
 
-.contact-inner-1 {
-	background-color: $white;
-	box-shadow: $shadow;
+.layout-col {
+	border-radius: 6px;
+	box-shadow: 0px 10px 35px 0px rgba(0, 0, 0, 0.10);
+
+	&-1 {
+		background-color: $white;
+		//box-shadow: $shadow;
+	}
+
+	&-2 {
+		background-color: #FDC500;
+	}
 }
 
-.contact-inner-2 {
-	background-color: $ultramarine-blue;
-}

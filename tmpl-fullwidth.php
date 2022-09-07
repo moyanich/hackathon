@@ -16,43 +16,50 @@ $pageBackground = get_field( 'page_background');
 		<section style="background-image: url(<?php echo $pageBackground; ?>)">
 			<div class="container py-5">
 
-				<div class="row">
+				
 					
-					<?php if( have_rows('flexible_layouts') ): ?>
-						<?php while( have_rows('flexible_layouts') ): the_row(); ?>
-							<?php if( get_row_layout() == 'two_column_layout' ): ?>
-								<div class="col-12 col-md-8 contact-inner-1">
+			<?php if( have_rows('flexible_layouts') ): ?>
+				<?php while( have_rows('flexible_layouts') ): the_row(); ?>
+					<?php if( get_row_layout() == 'two_column_layout' ): ?>
+
+						<div class="row gx-5">
+							<div class="col-12 col-md-8">
+								<div class="layout-col layout-col-1 p-5">
 									<?php the_sub_field('column_one'); ?>
 								</div>
+							</div>
 
-								<div class="col-12 col-md-4 contact-inner-2">
+							<div class="col-12 col-md-4">
+								<div class="layout-col layout-col-2 p-5">
 									<?php the_sub_field('column_two'); ?>
 								</div>
-								
-							<?php elseif( get_row_layout() == 'image' ): 
-								$image = get_sub_field('image');
-								?>
-								<figure>
-									<?php echo wp_get_attachment_image( $image['ID'], 'full' ); ?>
-									<figcaption><?php echo $image['caption']; ?></figcaption>
-								</figure>
-							<?php endif; ?>
-						<?php endwhile;
+							</div>
+						</div>
 						
-							else : 
-							while ( have_posts() ) :
-								the_post(); ?>
-								<article >
-									<div class="entry-content">
-										<?php
-										the_content();
-										?>
-									</div>
-								</article>	
+					<?php elseif( get_row_layout() == 'image' ): 
+						$image = get_sub_field('image');
+						?>
+						<figure>
+							<?php echo wp_get_attachment_image( $image['ID'], 'full' ); ?>
+							<figcaption><?php echo $image['caption']; ?></figcaption>
+						</figure>
+					<?php endif; ?>
+				<?php endwhile;
+				
+					else : 
+					while ( have_posts() ) :
+						the_post(); ?>
+						<article >
+							<div class="entry-content">
+								<?php
+								the_content();
+								?>
+							</div>
+						</article>	
 
-							<?php	
-							endwhile; // End of the loop.
-						endif; ?>
+					<?php	
+					endwhile; // End of the loop.
+				endif; ?>
 
 
 
