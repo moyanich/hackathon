@@ -36,3 +36,36 @@
 	}
 }
 
+
+.card.card-team {
+	border-radius: 0;
+	border: none;
+	box-shadow: $shadow-2;
+	
+	.card-img-top {
+		border-radius: 0;
+		transition: .3s ease-in-out;
+
+		&:hover {
+			filter: grayscale(100%);
+			-webkit-filter: grayscale(100%);
+		}
+	}
+
+	.team-body {
+		padding: 2.5rem;
+	}
+
+	.team-title {
+		color: $heading-color;
+		line-height: 1;
+	}
+
+	.team-position {
+		color: #333333;
+		font-weight: 100;
+	}
+
+
+
+}
