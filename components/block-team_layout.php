@@ -2,12 +2,11 @@
 /**
  * Team Layout
  * 
- * 
  * @package hackathon
  */
 ?>
 
-<section class="team my-5">
+<section class="block-team my-5">
     <div class="container">
         <div class="row mb-5">
             <div class="col-12 text-center text-capitalize">

@@ -17,41 +17,72 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
+		<section class="blog-page">
+			<div class="container">
+				<div class="row mb-5">
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+					<?php
+						if ( have_posts() ) :
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+							if ( is_home() && ! is_front_page() ) :
+								?>
+								<header>
+									<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+								</header>
+								<?php
+							endif; 
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+							echo '<div class="col-12 col-md-8 col-lg-8 content-area">';
 
-			endwhile;
+								/* Start the Loop */
+								while ( have_posts() ) :
+									the_post(); ?>
 
-			the_posts_navigation();
+										<article id="post-<?php the_ID(); ?>" <?php post_class('col-12'); ?>>
+											<div class="card card-blog">
+												<?php the_post_thumbnail('large', array('class' => 'card-img-top' )); ?>
+												
+												<div class="card-body" style="padding: 3em;">
+													<?php
+														the_title( '<h5 class="entry-title card-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h5>' );
+													?>
 
-		else :
+													<div class="post-content">
+														<div class="entry-content">
+															<?php the_excerpt(); ?>
+																<div class="post-footer readmore-btn-area"><a class="readmore" href="<?php esc_url( get_permalink() ); ?>">Read More <i class="bi bi-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</article><!-- #post-<?php the_ID(); ?> -->
 
-			get_template_part( 'template-parts/content', 'none' );
+									<?php
+									endwhile;
+								echo '<div class="mt-5">';
+									the_posts_navigation();
+								echo '</div>';
 
-		endif;
-		?>
+							echo '</div>';
+						else :
+
+							get_template_part( 'template-parts/content', 'none' );
+
+						endif;
+					?>
+
+					<div class="col-12 col-md-4 col-lg-4">
+						<?php
+							get_sidebar();
+						?>
+					</div>
+				
+				</div>
+			</div>
+		</section>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

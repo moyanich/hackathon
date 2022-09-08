@@ -68,16 +68,14 @@ function acf_display_pb_blocks(){
 	  'two_column_layout',
 	  'team_layout',
 	  'cta_registration',
+	  'two_columns_with_heading',
 	  /*'client_logos',
 	  'spacer',
-	  'btns',
 	  'cards',
-	  'safety',
 	  'testimonial-slider',
 	  'projects',
 	  'cta',
-	  'blog_posts',
-	  'protecth',*/
+	  'blog_posts',*/
 	);
   
 	if( have_rows('blocks') ):

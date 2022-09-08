@@ -60,10 +60,8 @@
 	</header><!-- #masthead -->
 		
 
-<?php
-
-get_template_part( 'partials/content', 'header');
-
-?>
+	<?php
+		get_template_part( 'partials/content', 'header');
+	?>
 
 
