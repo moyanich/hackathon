@@ -8,7 +8,7 @@
 ?>
 <?php $customClass = get_sub_field('custom_class'); ?>
 
-<section class="block block-two-columns-2 <?php echo $customClass; ?>">
+<section class="block block-two-columns-2 position-relative <?php echo $customClass; ?>">
     <div class="container">
         <div class="row">
 			<?php if( have_rows('content_layout') ): ?>

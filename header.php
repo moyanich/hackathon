@@ -31,34 +31,39 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hackathon' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'hackathon' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+	<header id="masthead" class="site-header position-relative">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-4">
+					<div class="site-branding">
+						<?php
+						the_custom_logo();
+						if ( is_front_page() && is_home() ) :
+							?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<?php
+						else :
+							
+						endif; ?>
+					</div><!-- .site-branding -->
+				</div>
+				<div class="col-12 col-md-8">
+					<nav id="site-navigation" class="main-navigation">
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="bi bi-list"></i></button>
+						<?php
+						wp_nav_menu(
+							array(
+								'menu'              => 'primary',
+								'theme_location' 	=> 'primary',
+								'menu_id'        	=> 'primary-menu',
+							)
+						);
+						?>
+					</nav>
+				</div>
+			</div>
+		</div><!-- #site-navigation -->
 	</header><!-- #masthead -->
-		
 
 	<?php
 		get_template_part( 'partials/content', 'header');

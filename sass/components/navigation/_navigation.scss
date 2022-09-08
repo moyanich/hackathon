@@ -36,10 +36,12 @@
 
 			:hover > a,
 			.focus > a {
+				color: $yellow !important;
 			}
 
 			a:hover,
 			a.focus {
+				color: $yellow !important;
 			}
 		}
 
@@ -54,6 +56,7 @@
 
 		&:hover > a,
 		&.focus > a {
+			color: $yellow !important;
 		}
 	}
 
@@ -66,6 +69,29 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		color: $yellow !important;
+	}
+
+	&.toggled .menu-main-menu-container {
+		box-shadow: $shadow;
+		margin-bottom: 20px;
+		transition: .8s cubic-bezier(0, 0, 0, 1.11);
+
+		ul {
+
+			li {
+				padding: 1em;
+
+				&.current-menu-item {
+					background-color: $yellow !important;
+
+					& > a {
+						color: $white !important;
+					}
+
+				}
+			}
+		}
 	}
 }
 
@@ -73,6 +99,15 @@
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+}
+
+.menu-toggle {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+	padding: 5px 15px;
+    font-size: 24px;
+	background-image: linear-gradient(100deg, #212529 0%, #212529 100%);
 }
 
 @media screen and (min-width: 37.5em) {
@@ -83,6 +118,9 @@
 
 	.main-navigation ul {
 		display: flex;
+		flex-direction: row;
+		gap: 30px;
+		justify-content: end;
 	}
 }
 
@@ -106,4 +144,9 @@
 		text-align: end;
 		flex: 1 0 50%;
 	}
+}
+
+img.custom-logo {
+    max-width: 80%;
+    padding: 20px;
 }

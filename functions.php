@@ -69,13 +69,8 @@ function acf_display_pb_blocks(){
 	  'team_layout',
 	  'cta_registration',
 	  'two_columns_with_heading',
-	  /*'client_logos',
-	  'spacer',
-	  'cards',
-	  'testimonial-slider',
-	  'projects',
-	  'cta',
-	  'blog_posts',*/
+	  'random_blog_post',
+	  'countdown_timer',
 	);
   
 	if( have_rows('blocks') ):
@@ -87,4 +82,33 @@ function acf_display_pb_blocks(){
 			}
 		endwhile;
 	endif;
-  }
+}
+
+function wra_theme_menu_classes($classes, $item, $args) {
+	if($args->theme_location == 'secondary') {
+		$classes[] = 'nav-item';
+	}
+
+	elseif ($args->theme_location == 'primary') {
+		$classes[] = 'nav-item';
+	}
+	return $classes;
+}
+add_filter('nav_menu_css_class','wra_theme_menu_classes',1,3);
+
+
+/*
+* Adds a class 
+* @link https://codex.wordpress.org/Plugin_API/Filter_Reference/nav_menu_link_attributes
+*
+*/
+
+function add_specific_menu_location_atts( $atts, $item, $args ) {
+    // check if the item is in the primary menu
+    if( $args->theme_location == 'primary' ) {
+      // add the desired attributes:
+      $atts['class'] = 'nav-link';
+    }
+    return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3 );
