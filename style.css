@@ -1009,6 +1009,11 @@ label.wp-block-search__label {
   color: #fff !important;
 }
 
+.wpcf7 form.sent .wpcf7-response-output {
+  color: #FCBF49;
+  background-color: #fff;
+}
+
 /* Blocks
 --------------------------------------------- */
 .block-team,

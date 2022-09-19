@@ -154,7 +154,7 @@ function hackathon_widgets_init() {
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<div class="widget-container"><h2 class="widget-title">',
-		'after_title'   => '</h2>/div>',
+		'after_title'   => '</h2></div>',
 	) );
 }
 add_action( 'widgets_init', 'hackathon_widgets_init' );
